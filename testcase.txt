@@ -1,0 +1,43 @@
+useradd root rootpwd
+login root rootpwd
+useradd bob Secretpass
+useradd alice test_password1
+useradd mike micheal823
+groupadd techsupport
+usergrp mike techsupport
+logout
+mkfile file1.txt
+login alice test_Password
+login alice test_password1
+mkfile alice.txt
+mkfile audit.txt
+write alice.txt Text from Alice
+chmod alice.txt rwx --- ---
+read alice.txt
+chgrp alice.txt techsupport
+mkfile file1.txt
+chmod file1.txt rwx rw- rw-
+execute file1.txt
+logout
+login bob Secretpass
+read alice.txt
+write alice.txt Text from bob
+execute alice.txt
+write file1.txt Text from bob
+read file1.txt
+execute file1.txt
+ls file1.txt
+chgrp accounts.txt students
+logout
+write alice.txt Not logged in
+login root rootpwd
+chown file1.txt mike
+usergrp alice techsupport
+logout
+ls file1.txt
+login mike micheal823
+ls groups.txt
+chgrp file1.txt techsupport
+execute file1.txt
+end
+
